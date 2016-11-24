@@ -1,7 +1,7 @@
 Summary: A free and portable font rendering engine
 Name: freetype-freeworld
 Version: 2.6.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL: http://www.freetype.org
 Source:  http://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
@@ -85,7 +85,7 @@ echo "%{_libdir}/%{name}" \
 %config(noreplace) %{_sysconfdir}/ld.so.conf.d/%{name}-%{_arch}.conf
 
 %changelog
-* Thu Nov 24 Pavlo Rudyi <paulcarroty@riseup.net> - 2.6.5-1
+* Thu Nov 24 2016 Pavlo Rudyi <paulcarroty@riseup.net> - 2.6.5-2
 - Update to 2.6.5
 
 * Sun May 15 2016 Leigh Scott <leigh123linux@googlemail.com> - 2.6.3-1
