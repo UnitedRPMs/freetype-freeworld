@@ -1,16 +1,15 @@
 Summary: A free and portable font rendering engine
 Name: freetype-freeworld
-Version: 2.6.3
+Version: 2.6.5
 Release: 1%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL: http://www.freetype.org
 Source:  http://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
 
-Patch21:  freetype-2.6.3-enable-spr.patch
+Patch21:  https://raw.githubusercontent.com/UnitedRPMs/freetype-freeworld/master/freetype-2.3.0-enable-spr.patch
 
 # Enable otvalid and gxvalid modules
-Patch46:  freetype-2.2.1-enable-valid.patch
-
+Patch46:  https://raw.githubusercontent.com/UnitedRPMs/freetype-freeworld/master/freetype-2.2.1-enable-valid.patch
 
 ## Security fixes:
 # none needed yet
@@ -86,6 +85,9 @@ echo "%{_libdir}/%{name}" \
 %config(noreplace) %{_sysconfdir}/ld.so.conf.d/%{name}-%{_arch}.conf
 
 %changelog
+* Thu Nov 24 Pavlo Rudyi <paulcarroty@riseup.net> - 2.6.5-1
+- Update to 2.6.5
+
 * Sun May 15 2016 Leigh Scott <leigh123linux@googlemail.com> - 2.6.3-1
 - Update to 2.6.3 (matches Fedora freetype)
 
