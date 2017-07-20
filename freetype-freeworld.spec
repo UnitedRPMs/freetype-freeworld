@@ -1,18 +1,19 @@
+# This spec file is based on other spec files (for compatiblity) PKGBUILDs and EBUILDs available from
+#  [1] https://www.archlinux.org/packages/extra/x86_64/freetype2/
+
+
 Summary: A free and portable font rendering engine
 Name: freetype-freeworld
-Version: 2.6.5
-Release: 2%{?dist}
+Version: 2.8
+Release: 1%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL: http://www.freetype.org
 Source:  http://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
 
-Patch21:  https://raw.githubusercontent.com/UnitedRPMs/freetype-freeworld/master/freetype-2.3.0-enable-spr.patch
-
-# Enable otvalid and gxvalid modules
-Patch46:  https://raw.githubusercontent.com/UnitedRPMs/freetype-freeworld/master/freetype-2.2.1-enable-valid.patch
-
-## Security fixes:
-# none needed yet
+Patch0: 0001-Enable-table-validation-modules.patch
+Patch1: 0002-Enable-subpixel-rendering.patch
+Patch2: 0003-Enable-infinality-subpixel-hinting.patch
+Patch3: 0004-Enable-long-PCF-family-names.patch
 
 Provides: freetype-bytecode
 Provides: freetype-subpixel
@@ -36,11 +37,7 @@ It transparently overrides the system library using ld.so.conf.d.
 
 
 %prep
-%setup -q -n freetype-%{version}
-
-%patch21 -p1 -b .enable-spr
-
-%patch46 -p1 -b .enable-valid
+%autosetup -n freetype-%{version} -p1 
 
 
 %build
@@ -85,6 +82,11 @@ echo "%{_libdir}/%{name}" \
 %config(noreplace) %{_sysconfdir}/ld.so.conf.d/%{name}-%{_arch}.conf
 
 %changelog
+
+* Thu Jul 20 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8-2
+- Updated to 2.8
+- Some patches for correct rendering
+
 * Thu Nov 24 2016 Pavlo Rudyi <paulcarroty@riseup.net> - 2.6.5-2
 - Update to 2.6.5
 
