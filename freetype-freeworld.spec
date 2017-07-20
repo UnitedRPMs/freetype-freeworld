@@ -83,7 +83,7 @@ echo "%{_libdir}/%{name}" \
 
 %changelog
 
-* Thu Jul 20 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8-2
+* Thu Jul 20 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8-1
 - Updated to 2.8
 - Some patches for correct rendering
 
