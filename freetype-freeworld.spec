@@ -4,7 +4,7 @@
 
 Summary: A free and portable font rendering engine
 Name: freetype-freeworld
-Version: 2.8
+Version: 2.8.1
 Release: 1%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL: http://www.freetype.org
@@ -82,6 +82,9 @@ echo "%{_libdir}/%{name}" \
 %config(noreplace) %{_sysconfdir}/ld.so.conf.d/%{name}-%{_arch}.conf
 
 %changelog
+
+* Mon Oct 30 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8.1-1
+- Updated to 2.8.1
 
 * Thu Jul 20 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8-1
 - Updated to 2.8
