@@ -11,7 +11,6 @@ URL: http://www.freetype.org
 Source:  http://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
 
 Patch0: 0001-Enable-table-validation-modules.patch
-Patch1: 0002-Enable-subpixel-rendering.patch
 Patch2: 0003-Enable-infinality-subpixel-hinting.patch
 Patch3: 0004-Enable-long-PCF-family-names.patch
 
