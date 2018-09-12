@@ -4,15 +4,15 @@
 
 Summary: A free and portable font rendering engine
 Name: freetype-freeworld
-Version: 2.8.1
+Version: 2.9.1
 Release: 1%{?dist}
 License: (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL: http://www.freetype.org
 Source:  http://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
 
 Patch0: 0001-Enable-table-validation-modules.patch
-Patch2: 0003-Enable-infinality-subpixel-hinting.patch
-Patch3: 0004-Enable-long-PCF-family-names.patch
+Patch1: 0002-Enable-infinality-subpixel-hinting.patch
+Patch2: 0003-Enable-long-PCF-family-names.patch
 
 Provides: freetype-bytecode
 Provides: freetype-subpixel
@@ -22,6 +22,7 @@ BuildRequires: libX11-devel
 BuildRequires: libpng-devel
 BuildRequires: zlib-devel
 BuildRequires: bzip2-devel
+BuildRequires: gcc-c++
 
 %description
 The FreeType engine is a free and portable font rendering
@@ -37,7 +38,6 @@ It transparently overrides the system library using ld.so.conf.d.
 
 %prep
 %autosetup -n freetype-%{version} -p1 
-
 
 %build
 %configure --disable-static \
@@ -81,6 +81,9 @@ echo "%{_libdir}/%{name}" \
 %config(noreplace) %{_sysconfdir}/ld.so.conf.d/%{name}-%{_arch}.conf
 
 %changelog
+
+* Wed Sep 12 2018 - David Va <davidva AT tuta DOT io> 2.9.1-1
+- Updated to 2.9.1
 
 * Mon Oct 30 2017 - David Vasquez <davidva AT tutanota DOT com>  2.8.1-1
 - Updated to 2.8.1
